@@ -256,7 +256,7 @@ int ex12()
 
 
 
-int ex13(int arrayin[], int num, int find)
+int finder(int arrayin[], int num, int find)
 {
 	int slot = 0;
 	for (; slot < num; slot++)
@@ -323,24 +323,48 @@ int ex15(int x, int y)
 	return x;
 }
 
+/*Write a function that takes in an array of integers, and the size of the array. The function
+should print out the “look and say” sequence for the array. The look and say sequence
+works by printing out how many of the same number there are in a row followed by that
+number.
+For example, if the array was {1, 1, 1, 1} the function would print out “4, 1” because there
+are four ones.
+If the array was {1, 2, 2, 2, 3, 4} the function would print out “1,1,3,2,1,3,1,4” because there
+is “one 1, three 2s, one 3, one 4”.
+If the array is {1,2,2,1,5,1,1,7,7,7,7,1,1,1,1,1,1,1,1} the function should print out
+“1,1,2,2,1,1,1,5,2,1,4,7,8,1”
+Write your own code to test the function.*/
 
-
-int lookandsay(int arrayin[], const int num)
+int lookAndSay(int arrayin[], const int num)
 {
-	int number[4] = {};
-	int amount[4] = {};
+	int repeat = 1;
+
+	for (int i = 0; i < num - 1; i++)
+	{
+		if (arrayin[i] == arrayin[i + 1])
+			repeat++;
+		else
+		{
+			cout << repeat << ", " << arrayin[i] << endl;
+			repeat = 1;
+		}
+	}
+	cout << repeat << ", " << arrayin[num-1] << endl;
 
 	return 0;
-
 }
 
 int ex16()
 {
+	int arrayin[19] = { 1,2,2,1,5,1,1,7,7,7,7,1,1,1,1,1,1,1,1 };
 
+	lookAndSay(arrayin, 19);
+
+	system("pause");
+	system("cls");
 
 	return 0;
 }
-
 
 
 int rockpaperscissors()
@@ -434,6 +458,7 @@ int main()
 	ex12();
 	ex13();
 	ex14();*/
+	ex16();
 	ex17();
 	return 0;
 }
