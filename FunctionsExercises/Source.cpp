@@ -20,7 +20,7 @@ int ex2func(int a, int b)
 		return a;
 }
 
-float ex2func(float input[3]) //Exercise 3. This is called prototyping and redefinition.
+float ex2func(float input[3])		//Exercise 3. This is called prototyping and redefinition.
 {
 	float biggernum;
 	float t;
@@ -69,7 +69,11 @@ float ex3func(float numtohalf)
 	return result;
 }
 
-
+/* Here, I'm using a string return to 
+simplify the code. Rather than having 
+separate cout lines for each side, I
+use one cout that calls this function
+to say "Heads" or "Tails". */
 
 string CoinToss()
 {
@@ -137,7 +141,6 @@ int ex7()
 }
 
 
-
 int SumArray(int arrayin[], int numarray)
 {
 	int sum = 0;
@@ -189,7 +192,11 @@ int ex9()
 {
 	int integer_array[7] = { 10, 15, 7, 4, 13, 19, 8 };
 	int result = MinInArray(integer_array, 7); //result = 4
-	std::cout << result << std::endl;	system("pause");	system("cls");	return 0;
+	std::cout << result << std::endl;
+
+	system("pause");
+	system("cls");
+	return 0;
 }
 
 
@@ -298,8 +305,6 @@ int Split(int arrayin[], int num, int arrayout[], int arrayout2[])
 	return posnum;
 }
 
-
-
 int ex14()
 {
 	int myarray[4] = { -4, 3, 1, -3 };
@@ -323,17 +328,13 @@ int ex15(int x, int y)
 	return x;
 }
 
-/*Write a function that takes in an array of integers, and the size of the array. The function
-should print out the “look and say” sequence for the array. The look and say sequence
-works by printing out how many of the same number there are in a row followed by that
-number.
-For example, if the array was {1, 1, 1, 1} the function would print out “4, 1” because there
-are four ones.
-If the array was {1, 2, 2, 2, 3, 4} the function would print out “1,1,3,2,1,3,1,4” because there
-is “one 1, three 2s, one 3, one 4”.
-If the array is {1,2,2,1,5,1,1,7,7,7,7,1,1,1,1,1,1,1,1} the function should print out
-“1,1,2,2,1,1,1,5,2,1,4,7,8,1”
-Write your own code to test the function.*/
+/* For this function, I had a basic comparing
+and counting code. For every time that the 
+current number is equal to the next, it adds
+one to the counter. If the next number is not
+equal to the first, then it prints the number
+that has been repeating, and the number stored
+in the counter. */
 
 int lookAndSay(int arrayin[], const int num)
 {
@@ -374,10 +375,7 @@ int rockpaperscissors()
 
 bool checkchoice(int choice)
 {
-	if (choice > 0 && choice < 4)
-		return true;
-	else
-		return false;
+	return (choice > 0 && choice < 4) ? true : false;
 }
 
 int whowins(int choice, int computer)
@@ -447,7 +445,14 @@ int ex17()
 	return 0;
 }
 
-int main()
+/* Though I do know about prototyping,
+I find it easier to keep my main at 
+the bottom of the code, because it's 
+only calling on the other functions 
+and doesn't have its own code other
+than that. */
+
+void main()
 {
 /*	ex2();
 	ex5();
@@ -457,8 +462,7 @@ int main()
 	ex11();
 	ex12();
 	ex13();
-	ex14();*/
-	ex16();
+	ex14();
+	ex16();*/
 	ex17();
-	return 0;
 }
